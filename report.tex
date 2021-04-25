@@ -1,0 +1,111 @@
+% \documentclass[conference]{IEEEtran}
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+% \usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+% user self defined
+\usepackage{hyperref}
+% \hypersetup{hidelinks=true}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% \usepackage{biblatex}
+%Citation-related commands
+\usepackage[style=ieee]{biblatex}
+\addbibresource{ref.bib}
+% \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{
+{Bachelor Thesis Draft}\\
+{\large Maastricht University}\\
+% {\includegraphics{UMlogo.jpg}}
+}
+\author{Yiping Huang}
+% \IEEEauthorblockA{\textit{Department of Data Science and Artificial Intelligence} \\
+% \textit{Maastricht University}\\
+% Maastricht, The Netherlands}
+% }
+
+\maketitle
+
+% \chapter*{Abstract}
+
+% \chapter*{Dedication}
+% To mum and dad
+
+% \chapter*{Declaration}
+% I declare that..
+
+% \chapter*{Acknowledgements}
+% I want to thank...
+
+\tableofcontents
+
+% \begin{abstract}
+% The document reports the test results of the EA(Evolutionary Algorithm) on different instances of problems, i.e., the 0-1 knapsack problems and the TSP(Traveling Salesman Problem).
+% \end{abstract}
+
+% \begin{IEEEkeywords}
+% EA, 0-1 knapsack problem, TSP problem, Combinatorial Optimization
+% \end{IEEEkeywords}
+
+
+% \begin{table}[h!]
+%     \centering
+%     \input{table/error_pop10.tex}    
+%     \caption{Deviation with population size =$ 10$}        
+%     \label{table:pop10_deviation}
+%     \end{table}
+% \begin{table}[h!]
+%     \centering
+%     \input{table/time_pop10.tex}
+%     \caption{running time(s) for $100$ generations with population size $10$}
+%     \label{table:pop10_time}
+% \end{table}
+
+% \begin{figure}[h]
+%     \includegraphics[width=8cm]{image/average_fitness_pop10.png}
+%     \caption{Average Fitness Change (population size = $10$) with File knapPI\_1\_2000\_1000\_1 as Input}
+%     \label{image:fitness_pop10}
+%     \end{figure}
+
+
+% \begin{figure}[h]
+%     \centering
+%     \begin{subfigure}[b]{0.3\textwidth}
+%         \includegraphics[width=\textwidth]{image/tsp/ga_result.png}
+%         \caption{Best Solution Found}
+%         \label{image:best solution}
+%     \end{subfigure}
+    
+%     \begin{subfigure}[b]{0.3\textwidth}
+%         \includegraphics[width=\textwidth]{image/tsp/optimal_solution.png}
+%         \caption{Optimal Solution}
+%         \label{image:optimal solution}
+%         \end{subfigure}        
+% \end{figure}
+% \chapter{Literature Review}
+\section{Literature Review}
+\input{sections/review}
+
+\appendix
+% \chapter{Appendix Title}
+% \input{sections/appendix}
+
+% \bibliographystyle{IEEEtran}
+% \bibliography{ref}
+\printbibliography
+\end{document}

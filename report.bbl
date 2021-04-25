@@ -1,0 +1,98 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{newman2006modularity}{article}{}
+      \name{author}{1}{}{%
+        {{hash=af84fa9f8d84f4aa9cd268c6d380f857}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Mark\bibnamedelima EJ},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {National Acad Sciences}%
+      }
+      \strng{namehash}{af84fa9f8d84f4aa9cd268c6d380f857}
+      \strng{fullhash}{af84fa9f8d84f4aa9cd268c6d380f857}
+      \strng{bibnamehash}{af84fa9f8d84f4aa9cd268c6d380f857}
+      \strng{authorbibnamehash}{af84fa9f8d84f4aa9cd268c6d380f857}
+      \strng{authornamehash}{af84fa9f8d84f4aa9cd268c6d380f857}
+      \strng{authorfullhash}{af84fa9f8d84f4aa9cd268c6d380f857}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the national academy of sciences}
+      \field{number}{23}
+      \field{title}{Modularity and community structure in networks}
+      \field{volume}{103}
+      \field{year}{2006}
+      \field{pages}{8577\bibrangedash 8582}
+      \range{pages}{6}
+    \endentry
+    \entry{blondel2008fast}{article}{}
+      \name{author}{4}{}{%
+        {{hash=01960fa4414c20b7bd352fa0969eac4b}{%
+           family={Blondel},
+           familyi={B\bibinitperiod},
+           given={Vincent\bibnamedelima D},
+           giveni={V\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=6b6e1859f5b4504b6f852c6112880f18}{%
+           family={Guillaume},
+           familyi={G\bibinitperiod},
+           given={Jean-Loup},
+           giveni={J\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=a0bc3d83c54bda6a078936b2d87d6c9f}{%
+           family={Lambiotte},
+           familyi={L\bibinitperiod},
+           given={Renaud},
+           giveni={R\bibinitperiod}}}%
+        {{hash=78c7291a964edd655c49fdec8099ab3e}{%
+           family={Lefebvre},
+           familyi={L\bibinitperiod},
+           given={Etienne},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{3c5e8ab9392178e7e71d099a1f7a2c2b}
+      \strng{fullhash}{136f387964fdc88f6e67c2282e9fa621}
+      \strng{bibnamehash}{136f387964fdc88f6e67c2282e9fa621}
+      \strng{authorbibnamehash}{136f387964fdc88f6e67c2282e9fa621}
+      \strng{authornamehash}{3c5e8ab9392178e7e71d099a1f7a2c2b}
+      \strng{authorfullhash}{136f387964fdc88f6e67c2282e9fa621}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of statistical mechanics: theory and experiment}
+      \field{number}{10}
+      \field{title}{Fast unfolding of communities in large networks}
+      \field{volume}{2008}
+      \field{year}{2008}
+      \field{pages}{P10008}
+      \range{pages}{-1}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

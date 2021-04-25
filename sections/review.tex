@@ -1,0 +1,41 @@
+\subsection{Modularity}
+Communities are often considered as tightly connected components within the whole structure. 
+
+Modularity Q measures how well the network is partitioned into communities. It is based on the assumption that community members tend to connect more with each other than with members from outside the community, which is often true in our daily life. Thus it can be expressed as  
+\[ Q \propto \sum_{s\in S}^{} (\text{\#edges within s}) - E(\text{\#edges within s})\], where $S$ is the partition set. a model that is based on this criteria gives us a high $Q$ value.
+
+To define the expection of edges between two nodes, we need to pick up a null model. One way is to connect nodes in a completely random way but each node needs to maintain its original degree\cite{newman2006modularity}. So in this null model, multiple edges between nodes are allowed to exist, which turns the original graph into a multi-graph. For a graph with $n$ nodes and $m$ edges, the expected edges between Node $i$ and $j$ would be $\frac{k_ik_j}{2m}$, where $k_i$ is the degree for node $i$. This is because the probability for one stub of node $i$ hitting the target node $j$ is $\frac{K_j}{2m}$, and summing over all stubs of node $i$ we have $k_i\cdot\frac{k_j}{2m}$. Then given a partition $S$, $Q(G,S)$ is defined as 
+\begin{equation} \label{basic}
+    Q = \frac{1}{2m}\sum_{s\in S} \sum_{i\in s}\sum_{j \in s} (A_{ij} - \frac{k_ik_j}{2m})    
+\end{equation}
+     where $A_{ij}$ is $1$ if node $i$ is pointing towards node $j$ and $0$ otherwise. Equivalently, this can be written as 
+\begin{equation}
+    Q = \sum_{s \in S}\frac{\sum_{in}}{2m} - {(\frac{\sum_{tot}}{2m})}^2   
+\end{equation}, where $\sum_{in}$ denotes sum of link weights between nodes in the set $s$, and $\sum_{tot}$ denotes sum of all link weights of nodes in the set $s$. This is because 
+$\sum_{i \in s}\sum_{j \in s}A_{ij} = \sum_{in}$ 
+and 
+\begin{equation*}
+    \begin{split}
+     & \sum_{i \in s}\sum_{j \in s} k_ik_j \\
+     = & \sum_{i \in s} k_i \sum_{j \in s} k_j \\
+     = & {\sum_{tot}}^2
+    \end{split}
+\end{equation*}
+
+% \[Q = \frac{1}{2m}\sum_{ij}[A_{ij} - \frac{k_ik_j}{2m}]\delta(c_i, c_j) \]
+% where $c_i$ is the community of node $i$ and $\delta(c_i, c_j)$ is $1$ if $c_i = c_j$.
+\subsection{Louvain Algorithm}
+Louvain algorithm \cite{blondel2008fast} is a fast optimization technique to maximize the modularity. It consists of two phases, namely, one partitioning phase and one restructuring phase. The first phase iterates through all the nodes, and for each node, tries to find the community that results in the maximum modularity gain. It then moves that node into that community and proceeds the next node. This process iterates until no node is found to move to another community. Then the second phase kicks in. This phase simply groups all nodes found in the community into a supernode, and turns edges within the community into self-loop edge for the supernode, and connect two supernodes only when there exists a pair of nodes between the two communities that connect to each other. The new edge weight is the sum of all the corresponding edge weights within or between the communities. This two-step process then repeats until the whole graph morphes to a single supernode. 
+
+The louvain algorithm is a greedy algorithm in that at each step it only moves the node to the community that maximize the modularity gain. It is fast since the modularity gain can be calculated quite easily once we calculated the total degrees and in degrees.
+
+The modularity gain from moving an isolated node $i$ to a new community $c$ is then
+\begin{equation} \label{movein}
+    [\frac{\sum in+k_{i,in} }{2m} - {(\frac{\sum_{tot} + k_i}{2m})}^2] - [\frac{\sum_{in}}{2m} - (\frac{\sum_{tot}}{2m})^2 - {(\frac{k_i}{2m})}^2]
+\end{equation}, similarly the modularity gain from from moving a node $i$ out of a community $d$ is then
+\begin{equation} \label{moveout}
+    [\frac{\sum_{in} - k_{i,in}}{2m} - {(\frac{\sum_{tot}-k_i}{2m})}^2 - {(\frac{k_i}{2m})}^2] - [\frac{\sum_{in}}{2m} - {(\frac{\sum_{tot}}{2m})}^2]
+\end{equation}
+The modularity gain from moving a node $i$ from its community $d$ to community $c$ is then the sum of \ref{movein} and \ref{moveout}. As we can see, we only need to store the $\sum_{in}$ and $\sum_{tot}$ for all the communities in the beginning of phase one, and the change in modularity is then easy to compute without invoking \ref{basic} to compute the modularity from scratch each time we try out different possibility.
+
+
